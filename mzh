@@ -1,0 +1,42 @@
+
+第5题  数组去重
+var list = [8,2,3,3,4,17,6,17,,25,];
+		var newArr = [];
+		function duplicateArr(list){
+			for(var i = 0;i < list.length;i++){
+				if(newArr.indexOf(list[i])==-1){
+					newArr.push(list[i]);
+				}
+			}
+			return newArr;
+		}
+		console.log(duplicateArr(list));
+
+
+第6题  实现一个js防抖函数debounce
+
+function debounce(fn, delay, immediate) {
+  let timer
+  let result
+  return function(...args) {
+    if (timer) clearTimeout(timer)
+    if (immediate) {
+      if (timer) {
+        timer = setTimeout(() => timer = null, delay)
+      } else {
+        result = fn.apply(this, args)
+        return result
+      }
+    } else {
+      timer = setTimeout(() => fn.apply(this, args), delay)
+    }
+  }
+}
+
+第8题
+判断数字是否为对称数，返回boolean值
+function isReverse (num) {
+    var sNum = String(num).split('').reverse().join('') - 0 ;
+    return sNum === num ;
+}
+
